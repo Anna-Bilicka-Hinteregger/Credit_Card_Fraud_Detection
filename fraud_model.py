@@ -28,3 +28,16 @@ x_train_res, y_train_res = smote.fit_resample(x_train, y_train)
 print("\n--- Imbalance Resolved ---")
 print("Resampled training Class Count (Balanced):\n", y_train_res.value_counts())
 print("Resampled test Class Count (Balanced):\n", y_test.value_counts())
+
+#Logistic Regression model
+model = LogisticRegression(solver='liblinear', random_state=42, C=0.1, max_iter=100)
+
+#Train the model
+model.fit(x_train_res, y_train_res)
+
+#Evaluate
+y_pred = model.predict(x_test)
+
+print("\n--- Model Performance Report ---")
+print("\nClassification Report (Key for Fraud Detection):\n", classification_report(y_test, y_pred))
+print("\nConfusion Matrix (Raw Counts): \n", confusion_matrix(y_test, y_pred))
