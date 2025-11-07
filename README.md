@@ -24,3 +24,6 @@ Model evaluation and ROC curve: `scripts/generate_report.py`
 
 ## 🚀 Tools Used
 Python, scikit-learn, matplotlib, Power BI, GitHub, PyCharm
+
+## Environment
+pandas matplotlib scikit-learn seaborn
