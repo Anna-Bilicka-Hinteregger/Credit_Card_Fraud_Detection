@@ -21,3 +21,11 @@ def clean_data(df):
     print(df['Class'].value_counts())
 
     return df
+
+def rename_columns(df):
+    df.rename(columns={
+        "Time": "time",
+        "Amount": "amount",
+        **{f"V{i}": f"feature_{i}" for i in range(1, 29)}
+    }, inplace=True)
+    return df
