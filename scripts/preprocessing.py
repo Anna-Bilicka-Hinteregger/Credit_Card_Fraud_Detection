@@ -26,6 +26,7 @@ def rename_columns(df):
     df.rename(columns={
         "Time": "time",
         "Amount": "amount",
+        "Class": "class"
         **{f"V{i}": f"feature_{i}" for i in range(1, 29)}
     }, inplace=True)
     return df
