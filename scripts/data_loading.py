@@ -21,4 +21,4 @@ def load_creditcard_data():
         print("❌ Dataset not found. Please download 'creditcard.csv' from Kaggle and place it in the 'data/' folder.")
         return None
 
-load_creditcard_data()
+
