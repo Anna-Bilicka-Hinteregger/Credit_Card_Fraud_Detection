@@ -18,7 +18,7 @@ def clean_data(df):
     print(df.describe())
 
     print("\n🧪 Class distribution:")
-    print(df['Class'].value_counts())
+    print(df['class'].value_counts())
 
     return df
 
@@ -26,7 +26,7 @@ def rename_columns(df):
     df.rename(columns={
         "Time": "time",
         "Amount": "amount",
-        "Class": "class"
+        "Class": "class",
         **{f"V{i}": f"feature_{i}" for i in range(1, 29)}
     }, inplace=True)
     return df
