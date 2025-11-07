@@ -2,6 +2,10 @@ from scripts.data_loading import load_creditcard_data
 from scripts.preprocessing import clean_data, rename_columns
 from scripts.smote_split import smote_split
 from scripts.logistic_regression import logistic_regression
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+
 # from src.modeling import train_model  ← add later
 # from src.visualization import plot_results  ← add later
 
@@ -26,7 +30,14 @@ def main():
     print("✅ ROC-AUC Score:", roc_auc)
     print("\n🧩 Confusion Matrix: \n", cm)
 
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+    plt.title("Confusion Matrix")
+    plt.xlabel("Predicted")
+    plt.ylabel("Actual")
+    plt.show()
+
     print("\n✅ Pipeline finished.")
+
 
 if __name__ == "__main__":
     main()
