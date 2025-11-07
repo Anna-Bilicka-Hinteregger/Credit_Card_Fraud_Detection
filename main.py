@@ -1,6 +1,7 @@
 from scripts.data_loading import load_creditcard_data
 from scripts.preprocessing import clean_data, rename_columns
 from scripts.smote_split import smote_split
+from scripts.logistic_regression import logistic_regression
 # from src.modeling import train_model  ← add later
 # from src.visualization import plot_results  ← add later
 
@@ -18,6 +19,12 @@ def main():
     print("\n--- Imbalance Resolved ---")
     print("Resampled training Class Count (Balanced):\n", y_train.value_counts())
     print("Resampled test Class Count (Balanced):\n", y_test.value_counts())
+
+    report, roc_auc, cm = logistic_regression(X_train, y_train, X_test, y_test)
+    print("\n📋 Logistic Regression Report:")
+    print(report)
+    print("✅ ROC-AUC Score:", roc_auc)
+    print("\n🧩 Confusion Matrix: \n", cm)
 
     print("\n✅ Pipeline finished.")
 
