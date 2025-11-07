@@ -14,6 +14,6 @@ def logistic_regression(X_train, y_train, X_test, y_test):
     # Return metrics
     report = classification_report(y_test, y_pred, output_dict=False)
     roc_auc = roc_auc_score(y_test, y_pred)
-    confusion_matrix = confusion_matrix(y_test, y_pred)
+    cm = confusion_matrix(y_test, y_pred)
 
-    return report, roc_auc, confusion_matrix
+    return report, roc_auc, cm
