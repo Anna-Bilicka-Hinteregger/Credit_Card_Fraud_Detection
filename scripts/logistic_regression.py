@@ -10,6 +10,7 @@ def logistic_regression(X_train, y_train, X_test, y_test):
 
     # Save model
     joblib.dump(model_lg, 'logistic_regression_model.pkl')
+    print("💾 Model saved as 'logistic_regression_model.pkl'")
 
     # Return metrics
     report = classification_report(y_test, y_pred, output_dict=False)
