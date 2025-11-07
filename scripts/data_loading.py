@@ -12,7 +12,7 @@ def load_creditcard_data():
     """
     data_path = Path(__file__).resolve().parent.parent / 'data' / 'creditcard.csv'
     try:
-        df = pd.read_csv('..\\data\\creditcard.csv')
+        df = pd.read_csv(data_path)
         print("✅ Data loaded successfully.")
         print("First 10 rows of the data frame:")
         print(df.head(10))
