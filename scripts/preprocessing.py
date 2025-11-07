@@ -6,7 +6,13 @@ def clean_data(df):
     """
     print("🔍 Checking for missing values...")
     missing = df.isnull().sum()
-    print(missing[missing > 0] if not missing.empty else "✅ No missing values.")
+    missing = missing[missing > 0]
+
+    if missing.empty:
+        print("✅ No missing values found.")
+    else:
+        print("⚠️ Missing values detected:")
+        print(missing)
 
     print("\n📊 Summary statistics:")
     print(df.describe())
