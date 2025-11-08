@@ -24,38 +24,27 @@ def main():
     print("Resampled test Class Count (Balanced):\n", y_test.value_counts())
 
     #Logistic Regression model
-    report, roc_auc, cm = logistic_regression(X_train, y_train, X_test, y_test)
+    report, roc_auc, cm_lr = logistic_regression(X_train, y_train, X_test, y_test)
     print("\n📋 Logistic Regression Report:")
     print(report)
     print("✅ ROC-AUC Score:", roc_auc)
-    print("\n🧩 Confusion Matrix: \n", cm)
-
-    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-    plt.title("Confusion Matrix")
-    plt.xlabel("Predicted")
-    plt.ylabel("Actual")
-    plt.show()
 
     #Random Forest model
-    report, roc_auc, cm, feature_importance = random_tree_model(X_train, y_train, X_test, y_test)
+    report, roc_auc, cm_rf, feature_importance = random_tree_model(X_train, y_train, X_test, y_test)
     print("\n📋 Random Forrest Classification Report:")
     print(report)
     print("✅ ROC-AUC Score:", roc_auc)
-    print("\n🧩 Confusion Matrix: \n", cm)
-    print("\n🌟 Top Features:")
-    print(feature_importance.head(10))
+
+    #Confusion matrix with save path
+    plot_confusion_matrix(cm_lr, title="Logistic Regression Confusion Matrix", save_path="confusion_matrix_logreg.png")
+    plot_confusion_matrix(cm_rf, title="Random Forest Confusion Matrix", save_path="confusion_matrix_rf.png")
+    #Feature importance
+    plot_feature_importance(feature_importance, top_n=10, save_path="feature_importance_rf.png")
 
     print("\n✅ Pipeline finished.")
 
 
-# Logistic Regression Confusion Matrix
-plot_confusion_matrix(cm, title="Logistic Regression Confusion Matrix")
 
-# Random Forest Confusion Matrix
-plot_confusion_matrix(cm, title="Random Forest Confusion Matrix")
-
-# Feature Importance Plot
-plot_feature_importance(feature_importance, top_n=10)
 
 if __name__ == "__main__":
     main()
