@@ -5,6 +5,8 @@ from scripts.logistic_regression import logistic_regression
 from scripts.random_tree_model import random_tree_model
 import seaborn as sns
 import matplotlib.pyplot as plt
+from scripts.visualization import plot_confusion_matrix, plot_feature_importance
+
 
 def main():
     print("🚀 Starting fraud detection pipeline...\n")
@@ -45,6 +47,15 @@ def main():
 
     print("\n✅ Pipeline finished.")
 
+
+# Logistic Regression Confusion Matrix
+plot_confusion_matrix(cm, title="Logistic Regression Confusion Matrix")
+
+# Random Forest Confusion Matrix
+plot_confusion_matrix(cm, title="Random Forest Confusion Matrix")
+
+# Feature Importance Plot
+plot_feature_importance(feature_importance, top_n=10)
 
 if __name__ == "__main__":
     main()
