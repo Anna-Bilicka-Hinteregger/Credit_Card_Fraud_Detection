@@ -33,10 +33,10 @@ def main():
     print("✅ ROC-AUC Score:", roc_auc)
 
     #Confusion matrix saved to a file path
-    plot_confusion_matrix(cm_lr, title="Logistic Regression Confusion Matrix", save_path="confusion_matrix_logreg.png")
-    plot_confusion_matrix(cm_rf, title="Random Forest Confusion Matrix", save_path="confusion_matrix_rf.png")
+    plot_confusion_matrix(cm_lr, title="Logistic Regression Confusion Matrix", save_path="visuals/confusion_matrix_logreg.png")
+    plot_confusion_matrix(cm_rf, title="Random Forest Confusion Matrix", save_path="visuals/confusion_matrix_rf.png")
     #Feature importance
-    plot_feature_importance(feature_importance, top_n=10, save_path="feature_importance_rf.png")
+    plot_feature_importance(feature_importance, top_n=10, save_path="visuals/feature_importance_rf.png")
 
     print("\n✅ Pipeline finished.")
 
