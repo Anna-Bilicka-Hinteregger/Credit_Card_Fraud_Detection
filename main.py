@@ -3,10 +3,7 @@ from scripts.preprocessing import clean_data, rename_columns
 from scripts.smote_split import smote_split
 from scripts.logistic_regression import logistic_regression
 from scripts.random_tree_model import random_tree_model
-import seaborn as sns
-import matplotlib.pyplot as plt
 from scripts.visualization import plot_confusion_matrix, plot_feature_importance
-
 
 def main():
     print("🚀 Starting fraud detection pipeline...\n")
@@ -35,7 +32,7 @@ def main():
     print(report)
     print("✅ ROC-AUC Score:", roc_auc)
 
-    #Confusion matrix with save path
+    #Confusion matrix saved to a file path
     plot_confusion_matrix(cm_lr, title="Logistic Regression Confusion Matrix", save_path="confusion_matrix_logreg.png")
     plot_confusion_matrix(cm_rf, title="Random Forest Confusion Matrix", save_path="confusion_matrix_rf.png")
     #Feature importance
