@@ -1,6 +1,10 @@
 # 🕵️‍♀️ Credit Card Fraud Detection Model
 
-An imbalanced classification project using Python and Power BI to predict high-risk financial transactions.
+Hi! I’m transitioning into analytics and building portfolio projects to showcase my skills.  
+This repo includes a fraud detection model, dashboard, and reproducible pipeline using Python and Power BI.  
+Final report sheet coming soon — stay tuned!
+
+🔍 This is an imbalanced classification project focused on predicting high-risk financial transactions using Python and Power BI.
 
 ## 📄 Final Report
 [Download Full Executive Summary and Visuals](report/final_fraud_report.pdf)
